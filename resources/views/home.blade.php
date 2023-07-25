@@ -26,18 +26,19 @@
 <div class="bg-serie">
     <div class="container">
         <div class="row position">
-            @foreach($comics as $id => $comic)
+            @forelse($comics as $comic)
             <div class="col-12 col-md-6 col-lg-2 my-3">
-                <a href="{{ route('comic.show', $id) }}">
+                
                     <div class="my-card">
-                        <img class="img-fluid img-comic" src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
+                        <img class="img-fluid img-comic" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                         <div class="card-body">
-                            <span><h4 class="title_h4">{{ $comic['series'] }}</h4></span>
+                            <span><h4 class="title_h4">{{ $comic->series }}</h4></span>
                         </div>
                     </div>
-                </a>
+
             </div>
-            @endforeach
+            @empty
+            @endforelse
             <div class="col-12 d-flex justify-content-center">
                 <button class="btn-load">LOAD MORE</button>
             </div>
