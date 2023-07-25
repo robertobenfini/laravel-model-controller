@@ -28,16 +28,19 @@
         <div class="row position">
             @forelse($comics as $comic)
             <div class="col-12 col-md-6 col-lg-2 my-3">
-                
+                <a href="{{ route('comics.show', $comic->id) }}">
                     <div class="my-card">
                         <img class="img-fluid img-comic" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                         <div class="card-body">
                             <span><h4 class="title_h4">{{ $comic->series }}</h4></span>
                         </div>
                     </div>
-
+                </a>
             </div>
             @empty
+            <div class="col-12">
+                Sorry, page not found
+            </div>
             @endforelse
             <div class="col-12 d-flex justify-content-center">
                 <button class="btn-load">LOAD MORE</button>

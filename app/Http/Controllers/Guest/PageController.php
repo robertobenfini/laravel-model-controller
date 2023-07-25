@@ -16,7 +16,7 @@ class PageController extends Controller
     }
 
     public function show($id){
-        $comic = Comic::find($id);
+        $comic = Comics::find($id);
 
         return view('comics.show', compact('comic'));
     }
